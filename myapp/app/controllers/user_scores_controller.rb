@@ -5,6 +5,7 @@ class UserScoresController < ApplicationController
   # GET /user_scores.json
   def index
     @user_scores = UserScore.all
+    render :json => @user_scores
   end
 
   # GET /user_scores/1
