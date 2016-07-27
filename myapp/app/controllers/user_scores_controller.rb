@@ -15,6 +15,8 @@ class UserScoresController < ApplicationController
   # GET /user_scores/new
   def new
     @user_score = UserScore.new
+    @name = params[:name]
+    @score = params[:score]
   end
 
   # GET /user_scores/1/edit
@@ -42,7 +44,7 @@ class UserScoresController < ApplicationController
   def update
     respond_to do |format|
       if @user_score.update(user_score_params)
-        format.html { redirect_to @user_score, notice: 'User score was successfully updated.' }
+        format.html { red irect_to @user_score, notice: 'User score was successfully updated.' }
         format.json { render :show, status: :ok, location: @user_score }
       else
         format.html { render :edit }
