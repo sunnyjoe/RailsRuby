@@ -16,8 +16,9 @@ class UserScoresController < ApplicationController
   # GET /user_scores/new
   def new
     @user_score = UserScore.new
-    @name = params[:name]
-    @score = params[:score]
+    @user_score.name = params[:name]
+    @user_score.score = params[:score]
+    @user_score.save
   end
 
   # GET /user_scores/1/edit
